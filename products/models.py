@@ -58,7 +58,7 @@ class Review(models.Model):
     user = models.ForeignKey(User, related_name= 'review_user',on_delete=models.SET_NULL, null=True, blank=True)#If delete User, not delete the comment
     product = models.ForeignKey(Product, related_name='review_product', on_delete=models.CASCADE) #If delete the product,delete the comment
     review = models.TextField(_('Review'), max_length=500)
-    rate = models.ImageField()
+    rate = models.IntegerField()
     created_at = models.DateTimeField(default=timezone.now)
     
 
