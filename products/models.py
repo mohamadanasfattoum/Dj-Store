@@ -4,12 +4,17 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 
-
+FLAG_CHOTCES = (
+    ('Sale','Sale'),
+    ('Feature','Feature'),
+    ('New','New'),
+)
 
 class Product(models.Model):
     name = models.CharField(_('Name'), max_length=120)
     image = models.ImageField(_('Image'), upload_to= 'product')
-    price = models.FloatField()
+    price = models.FloatField(_('Price'))
+    flag = models.CharField(_('Flag'),max_length=10, choices=FLAG_CHOTCES)
     
 
 
