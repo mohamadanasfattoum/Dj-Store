@@ -11,7 +11,7 @@ Products:
     - description
     - quantity 
     - tags
-    - vidio_url
+    - video_url
     - related-item
     - slug
 
