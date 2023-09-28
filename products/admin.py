@@ -4,8 +4,14 @@ from .models import Product, ProductImage, Brand, Review
 
 
 
+class ProductImageInline(admin.TabularInline): # images in image
+    model= ProductImage
+
+
 class ProductAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
     summernote_fields = '__all__'
+    inlines= [ProductImageInline,]
+
 
 
 admin.site.register(Product,ProductAdmin)
