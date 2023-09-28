@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.utils.text import slugify
-
+from taggit.managers import TaggableManager
 
 FLAG_CHOTCES = (
     ('Sale','Sale'),
@@ -17,7 +17,13 @@ class Product(models.Model):
     price = models.FloatField(_('Price'))
     flag = models.CharField(_('Flag'),max_length=10, choices=FLAG_CHOTCES)
     brand = models.ForeignKey('Brand',verbose_name=_('Brand'), related_name='product_brand', on_delete=models.SET_NULL, null=True, blank=True )
-    
+    sku = models.CharField(_('SKU'),max_length=10)
+    subtitle = models.TextField(_('Subtitle'), max_length=500)
+    description = models.TextField(_('Description'), max_length=1000)
+    quantity = models.IntegerField(_('Quantity'))
+    tags = TaggableManager()
+
+
 
 
 class ProductImage(models.Model):

@@ -9,6 +9,7 @@ Products:
     - sku
     - subtitle
     - description
+    - quantity 
     - tags
     - vidio_url
     - related-item
