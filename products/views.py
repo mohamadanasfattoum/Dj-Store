@@ -19,7 +19,9 @@ class BrandList(ListView):
 
 class BrandDetail(ListView):
     model = Product
-    template_name = 'brand_detail.html'
+    template_name = 'products/brand_detail.html'
+
+    
     def get_queryset(self):
         queryset = super(BrandDetail, self).get_queryset()
         brand = Brand.objects.get(slug=self.kwargs['slug'])
