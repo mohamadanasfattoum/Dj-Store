@@ -75,12 +75,15 @@
                                 <span>{{object.price}}</span>
                             </h3>
                             <p class="details-desc">{{object.subtitle|safe}}</p>
-                            <div class="details-list-group">
+                             <div class="details-list-group">
                                 <label class="details-list-title">tags:</label>
-                                <ul class="details-tag-list">                                 
-                                        {{object.tags}}
+                                <ul class="details-tag-list">
+                                    <!--<li><a href="#">{{object.tags|safe}}</a></li>-->
+                                    
+                                    <li><a href="#">fruits</a></li>
+                                    <li><a href="#">chilis</a></li>
                                 </ul>
-                            </div>
+                            </div> 
                             <div class="details-list-group">
                                 <label class="details-list-title">Share:</label>
                                 <ul class="details-share-list">
@@ -127,34 +130,35 @@
 
 
                         <div class="product-details-frame">
-                            <h3 class="frame-title">Reviews (2)</h3>
+                            <h3 class="frame-title">Reviews </h3>
                             <h3 class="frame-title">Description</h3>
                             <div class="tab-descrip">
                                 <p>{{object.description|safe}}</p>
                             </div>
-                            {% for review in reviews %}
-                            <ul class="review-list">
-                                <li class="review-item">
-                                    <div class="review-media">
-                                        <a class="review-avatar" href="#">
-                                            <img src="images/avatar/04.jpg" alt="review">
-                                        </a>
-                                        <h5 class="review-meta">
-                                            <a href="#">{{review.user}}</a>
-                                            <span>{{review.created_at}}</span>
-                                        </h5>
-                                    </div>
-                                    <ul class="review-rating">
-                                        <li class="icofont-ui-rating"></li>
-                                        <li class="icofont-ui-rating"></li>
-                                        <li class="icofont-ui-rating"></li>
-                                        <li class="icofont-ui-rating"></li>
-                                        <li class="icofont-ui-rate-blank"></li>
-                                    </ul>
-                                    <p class="review-desc">{{review.review}}</p>
 
-                                </li>
-                            </ul>
+                            {% for review in reviews %}
+                                <ul class="review-list">
+                                    <li class="review-item">
+                                        <div class="review-media">
+                                            <a class="review-avatar" href="#">
+                                                <img src="images/avatar/04.jpg" alt="review">
+                                            </a>
+                                            <h5 class="review-meta">
+                                                <a href="#">{{review.user}}</a>
+                                                <span>{{review.created_at}}</span>
+                                            </h5>
+                                        </div>
+                                        <ul class="review-rating">
+                                            <li class="icofont-ui-rating"></li>
+                                            <li class="icofont-ui-rating"></li>
+                                            <li class="icofont-ui-rating"></li>
+                                            <li class="icofont-ui-rating"></li>
+                                            <li class="icofont-ui-rate-blank"></li>
+                                        </ul>
+                                        <p class="review-desc">{{review.review}}</p>
+
+                                    </li>
+                                </ul>
                             {% endfor %}
 
                         </div>
