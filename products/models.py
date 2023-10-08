@@ -18,7 +18,7 @@ class Product(models.Model):
     flag = models.CharField(_('Flag'),max_length=10, choices=FLAG_CHOTCES)
     brand = models.ForeignKey('Brand',verbose_name=_('Brand'), related_name='product_brand', on_delete=models.SET_NULL, null=True, blank=True )
     sku = models.CharField(_('SKU'),max_length=10)
-    subtitle = models.TextField(_('Subtitle'), max_length=500)
+    subtitle = models.CharField(_('Subtitle'), max_length=500)
     description = models.TextField(_('Description'), max_length=50000)
     quantity = models.IntegerField(_('Quantity'))
     tags = TaggableManager()
