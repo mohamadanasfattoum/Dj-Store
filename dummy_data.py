@@ -43,6 +43,7 @@ def add_products(n):
 
 
 def add_reviews(n):
+    fake = Faker()
     Review.objects.create(
         user = User.objects.get(id=random.randint(1,4)),
         product = Product.objects.get(id=random.randint(1,1002)),
