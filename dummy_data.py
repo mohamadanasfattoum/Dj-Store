@@ -21,7 +21,23 @@ def add_brands(n):
     print(f"{n} brands was created successfully" )
 
 def add_products(n):
-    pass
+    fake = Faker()
+    images = ['1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg','8.jpeg','9.jpeg','10.jpeg']
+    flags = ['Sale','New','Feature'] 
+    for x in range (n):
+        Product.objects.create(
+            name = fake.name(),
+            image = f"product/{images[random.randint(0,9)]}"
+            price = round(random.uniform(20.99,99.99),2),
+            flag =  flags[random.randint(0,2)],
+            brand = Brand.objects.get(id=random.randint(1,55)),
+            sku = random.randint(1000,1000000),
+            subtitle = fake.text(max_nb_chars=200),
+            description = fake.text(max_nb_chars=1000),
+            quantity = random.randint(5,30),
+
+
+        )
 
 
 
@@ -30,5 +46,4 @@ def add_products(n):
 def add_reviews(n):
     pass
 
-
-add_brands(50)
+add_products(5)
