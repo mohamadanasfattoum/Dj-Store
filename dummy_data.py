@@ -31,4 +31,4 @@ def add_reviews(n):
     pass
 
 
-add_products(2)
+add_brands(50)
