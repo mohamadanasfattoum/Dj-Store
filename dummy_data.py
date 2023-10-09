@@ -54,4 +54,4 @@ def add_reviews(n):
     print(f"{n} Review was created successfully" )
 
 
-add_reviews(2)
+add_reviews(5000)
